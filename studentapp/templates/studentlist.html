@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container mt-5 table-responsive" style="min-height: 100vh;">
+    <table class="table table-hover table-striped">
+        <thead>
+            <tr class="bg-primary text-light">
+                <th>Number</th>
+                <th>Name</th>
+                <th>Surname</th>
+                <th>Gender</th>
+                <th class="text-end">
+                    <a href="{% url 'add' %}" class="btn btn-warning">ADD</a>
+                </th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            {% for student in students %}
+            <tr>
+                <td>{{student.number}}</td>
+                <td>{{student.first_name}}</td>
+                <td>{{student.last_name}}</td>
+                <td>{{student.gender}}</td>
+                <td class="btn-group d-flex flex-nowrap gap-2">
+                    <a href="{% url 'detail' student.id %}" class="btn btn-primary">DETAIL</a>
+                    <a href="{% url 'update' student.id  %}" class="btn btn-success">UPDATE</a>
+                    <a href="{% url 'delete' student.number  %}" class="btn btn-danger">DEL</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+
+{% endblock content %}

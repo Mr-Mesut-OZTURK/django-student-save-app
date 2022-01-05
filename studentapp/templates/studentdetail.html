@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<style>
+    td:first-child {
+        /* text-align: right; */
+    }
+</style>
+<div class="container my-5 py-5">
+
+    <div class="card mx-auto" style="max-width: 500px;">
+
+        <img src="{{student.image.url}}" alt="" class="card-image">
+
+        <div class="card-body">
+            <h2 class="text-center alert alert-success">INFO</h2>
+
+            <table class="table table-hover">
+                <tr>
+                    <td>NUMBER</td>
+                    <td>:</td>
+                    <td>
+                        <h4>{{student.number}}</h4>
+                    </td>
+                </tr>
+                <tr>
+                    <td>NAME</td>
+                    <td>:</td>
+                    <td>
+                        <h4>{{student.first_name}}</h4>
+                    </td>
+                </tr>
+                <tr>
+                    <td>SURNAME</td>
+                    <td>:</td>
+                    <td>
+                        <h4>{{student.last_name}}</h4>
+                    </td>
+                </tr>
+                <tr>
+                    <td>EMAIL</td>
+                    <td>:</td>
+                    <td>
+                        <h4>{{student.email}}</h4>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div
+            class="card-footer alert {% if student.gender == '2' %} alert-primary {% else %} alert-danger {% endif %} m-0">
+            <p class="display-2 text-center">
+                {% if student.gender == '2' %} Male {% else %} Female {% endif %}
+            </p>
+        </div>
+
+    </div>
+
+</div>
+{{student.image}}
+
+
+{% endblock content %}

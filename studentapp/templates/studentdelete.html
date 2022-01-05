@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<div class="container my-4 py-4" style="max-width: 500px;">
+
+    <h2 class="alert alert-danger text-center py-4">DELETE</h2>
+
+    <form method="post" class="aler alert-secondary px-3 py-5">
+
+        {% csrf_token %}
+
+        <img src="{{student.image.url}}" alt="" class="pb-3 w-100">
+
+        <p class="text-center my-4 lead text-dark">
+            Are you sure to delete 
+            <strong class="">{{student}} ?</strong>
+        </p>
+
+        <div class="d-grid gap-4">
+            <a href="{% url 'list' %}" class="btn btn-success d-block py-2">GO BACK</a>
+            <button type="submit" class="btn btn-outline-danger d-block w-100">DEL</button>
+
+        </div>
+    </form>
+
+</div>
+
+{% endblock content %}

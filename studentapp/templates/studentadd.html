@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<div class="container p-md-5 m-md-5">
+    <h2 class="alert alert-primary text-center py-5">ADD STUDENT</h2>
+    <form class="uniform form alert alert-primary px-md-3 py-5 d-grid gap-4" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form|crispy}}
+        <button class="btn btn-success" type="submit">SEND</button>
+    </form>
+</div>
+
+{% endblock content %}
