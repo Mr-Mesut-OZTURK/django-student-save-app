@@ -1,4 +1,4 @@
-# django-blog-app
-## <a href="https://pala-django-blog-app.herokuapp.com"></a>
+# django-student-save-app
+## <a href="#"></a>
 
 <img src="./django-studentsaveapp.gif">
